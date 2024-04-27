@@ -1,11 +1,35 @@
 import { Link, NavLink } from "react-router-dom";
 import proImg from '../../assets/user.png'
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import { Tooltip } from "react-tooltip";
+import { CiLight } from "react-icons/ci";
+import { FaRegMoon } from "react-icons/fa";
 
 const Navbar = () => {
 
     const { signOutUser, user, loader } = useContext(AuthContext);
+
+    const [theme, setTheme] = useState(
+        localStorage.getItem('theme') ? localStorage.getItem("theme") : "light"
+    );
+
+
+    const handleChange = e => {
+        if (e.target.checked) {
+            setTheme("dark");
+        }
+        else {
+            setTheme("light");
+        }
+    }
+
+
+    useEffect(() => {
+        localStorage.setItem("theme", theme);
+        const localTheme = localStorage.getItem("theme");
+        document.querySelector('html').setAttribute("data-theme", localTheme);
+    }, [theme])
 
     const navList = <>
         <li><NavLink to='/'>Home</NavLink></li>
@@ -13,11 +37,11 @@ const Navbar = () => {
 
         {
             user &&
-                <>
-                    <li><NavLink to='/user-profile'>Add Craft Item</NavLink></li>
-                    <li><NavLink to='/update-profile'>My Art&Craft List</NavLink></li>
-                </>
-            
+            <>
+                <li><NavLink to='/user-profile'>Add Craft Item</NavLink></li>
+                <li><NavLink to='/update-profile'>My Art&Craft List</NavLink></li>
+            </>
+
         }
     </>
 
@@ -37,7 +61,7 @@ const Navbar = () => {
                         {navList}
                     </ul>
                 </div>
-                <a className="btn btn-ghost font-bold text-xl"><span className="text-cyan-800">Dream</span> Home</a>
+                <a className="btn btn-ghost font-bold text-xl"><span className="text-cyan-800">Crafty</span> Corner</a>
             </div>
 
             <div className="navbar-center hidden md:flex">
@@ -48,19 +72,44 @@ const Navbar = () => {
 
             <div className="navbar-end">
 
+                <div className="mr-6 mt-2">
+                    <label className="swap swap-rotate">
+
+
+                        {/* this hidden checkbox controls the state */}
+                        <input type="checkbox" onChange={handleChange} checked={theme === "light" ? false : true} className="theme-controller" value="synthwave" />
+
+
+                        {/* sun icon */}
+
+                        <CiLight className="swap-off fill-current w-8 h-8" />
+
+                        {/* moon icon */}
+
+                        <FaRegMoon  className="swap-on fill-current w-8 h-8" />
+
+                    </label>
+                </div>
+
+
+
                 {
                     user ?
                         <>
                             {
                                 loader ? <span className="loading loading-dots loading-sm"></span> :
                                     <>
-                                        <div className="tooltip tooltip-bottom mr-4" data-tip={user.displayName}>
-                                            <div className="avatar">
-                                                <div className="w-12 rounded-full">
-                                                    <img src={user.photoURL} />
-                                                </div>
-                                            </div>
+                                        <div className="mr-4">
+                                            <a
+                                                data-tooltip-id="my-tooltip"
+                                                data-tooltip-content={user.displayName}
+                                                data-tooltip-place="top"
+                                            >
+                                                <img src={user.photoURL} className="w-12 h-12 rounded-full" />
+                                            </a>
+                                            <Tooltip id="my-tooltip" />
                                         </div>
+
 
                                         <button className="btn bg-cyan-800 hover:bg-cyan-950 text-white" onClick={handleSignOut}>Sign Out</button>
                                     </>
