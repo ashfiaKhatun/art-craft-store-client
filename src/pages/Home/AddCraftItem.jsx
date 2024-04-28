@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { Typewriter } from "react-simple-typewriter";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddCraftItem = () => {
 
@@ -37,7 +38,22 @@ const AddCraftItem = () => {
             name
         }
 
-        console.log(craftInfo);
+        fetch('http://localhost:5000/allItems', {
+            method: 'POST',
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(craftInfo)
+        })
+            .then(res => res.json())
+            .then(() => {
+                Swal.fire({
+                    icon: "success",
+                    title: "Success",
+                    text: "Item Added Successfully",
+                });
+            })
+
         form.reset();
 
 
