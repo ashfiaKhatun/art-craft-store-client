@@ -38,8 +38,8 @@ const Navbar = () => {
         {
             user &&
             <>
-                <li><NavLink to='/user-profile'>Add Craft Item</NavLink></li>
-                <li><NavLink to='/update-profile'>My Art&Craft List</NavLink></li>
+                <li><NavLink to='/add-craft-item'>Add Craft Item</NavLink></li>
+                <li><NavLink to='/art-craft-list'>My Art&Craft List</NavLink></li>
             </>
 
         }
