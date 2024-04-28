@@ -39,7 +39,7 @@ const Navbar = () => {
             user &&
             <>
                 <li><NavLink to='/add-craft-item'>Add Craft Item</NavLink></li>
-                <li><NavLink to='/art-craft-list'>My Art&Craft List</NavLink></li>
+                <li><NavLink to={`/my-craft-list/email/${user.email}`}>My Art&Craft List</NavLink></li>
             </>
 
         }

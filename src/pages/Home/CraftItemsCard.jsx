@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 const CraftItemsCard = ({ data }) => {
 
     const {
+        _id,
         item_name,
         sub_category,
         price,
@@ -18,7 +19,7 @@ const CraftItemsCard = ({ data }) => {
                 <h2 className="card-title">{item_name}</h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
                 <div className="card-actions justify-end">
-                    <Link>
+                    <Link to={`/item-details/${_id}`}>
                         <button className="btn btn-primary">View Details</button>
                     </Link>
                 </div>

@@ -13,12 +13,14 @@ const PrivateRouter = ({children}) => {
     if(loader){
         <span className="loading loading-dots loading-lg flex justify-center items-center min-h-screen"></span>
     }
-
-    if(user){
+    else if(user){
         return children;
     }
+    else{
+        return <Navigate state={location.pathname} to='/signin'></Navigate>
 
-    return <Navigate state={location.pathname} to='/signin'></Navigate>
+    }
+
 };
 
 PrivateRouter.propTypes = {
