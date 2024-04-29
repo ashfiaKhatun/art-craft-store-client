@@ -1,26 +1,20 @@
 import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
+import MyListCard from "./MyListCard";
+import { useState } from "react";
 
 const MyItems = () => {
 
     const loadedData = useLoaderData();
 
+    const [craftItems, setCraftItems] = useState(loadedData);
 
     return (
         <>
             <Helmet><title>My List</title></Helmet>
-            <div>
+            <div className="grid md:grid-cols-3 px-2 gap-4 md:gap-8 my-6">
                 {
-                    loadedData.map(data => <div key={data._id} className="card card-compact w-96 bg-base-100 shadow-xl">
-                    <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-                    <div className="card-body">
-                      <h2 className="card-title">{data.item_name}</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
-                      <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Buy Now</button>
-                      </div>
-                    </div>
-                  </div>)
+                    craftItems.map(data => <MyListCard key={data._id} data={data} craftItems={craftItems} setCraftItems={setCraftItems}></MyListCard>)
                 }
             </div>
         </>

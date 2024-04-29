@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const AddCraftItem = () => {
 
     const { loader, user } = useContext(AuthContext);
-    const typeWriterArray = ['ashfia', 'khatun', 'sohely'];
+    const typeWriterArray = ['Earth without art is just Eh!'];
 
     const handleAddCraftItem = e => {
         e.preventDefault();
@@ -56,7 +56,6 @@ const AddCraftItem = () => {
 
         form.reset();
 
-
     }
 
     return (
@@ -73,15 +72,13 @@ const AddCraftItem = () => {
 
 
                     </div>
-                    <div className="text-sm md:text-lg font-bold text-green-600 w-28 md:w-72 h-5">
+                    <div className="text-sm md:text-lg text-cyan-800 w-28 md:w-72 h-5">
                         <Typewriter words={typeWriterArray} loop={true} cursor={true} />
                     </div>
                 </div>
 
-
                 {
                     loader ? <div className='mt-6 w-full text-center'><span className="loading loading-spinner loading-lg"></span></div> :
-
 
                         <form className="space-y-4 mt-6" onSubmit={handleAddCraftItem}>
                             {/* Form Row */}

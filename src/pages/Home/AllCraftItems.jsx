@@ -10,14 +10,14 @@ const AllCraftItems = () => {
         <>
 
             <Helmet><title>All Craft Items</title></Helmet>
-            <div>
-                <h1>Info about craft</h1>
+            <div className="mt-6 md:mt-16 max-w-6xl mx-auto">
+                <h1 className="text-center text-2xl md:text-4xl font-bold mb-6 md:mb-12">Info about craft</h1>
 
-            </div>
-            <div>
-                {
-                    loadedData.map(data => <CraftItemsCard key={data._id} data={data}></CraftItemsCard>)
-                }
+                <div className="grid md:grid-cols-3 px-2 gap-4 md:gap-8 my-6">
+                    {
+                        loadedData.map(data => <CraftItemsCard key={data._id} data={data}></CraftItemsCard>)
+                    }
+                </div>
             </div>
         </>
     );

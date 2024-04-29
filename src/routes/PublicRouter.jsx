@@ -11,6 +11,7 @@ import AllCraftItems from "../pages/Home/AllCraftItems";
 import PrivateRouter from "./PrivateRouter";
 import Details from "../pages/Home/Details";
 import MyItems from "../pages/Home/MyItems";
+import UpdateItem from "../pages/Home/UpdateItem";
 
 const router = createBrowserRouter([
     {
@@ -45,11 +46,15 @@ const router = createBrowserRouter([
                 loader: ({params}) => fetch(`http://localhost:5000/allItems/${params.id}`)
             },
             {
+                path: '/update-item/:id',
+                element: <UpdateItem></UpdateItem>,
+                loader: ({params}) => fetch(`http://localhost:5000/allItems/${params.id}`)
+            },
+            {
                 path: '/my-craft-list/email/:email',
                 element: <MyItems></MyItems>,
                 loader: ({params}) => fetch(`http://localhost:5000/allItems/email/${params.email}`)
             },
-
         ]
     },
 ]);
