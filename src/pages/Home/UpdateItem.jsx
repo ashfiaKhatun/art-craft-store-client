@@ -1,9 +1,11 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateItem = () => {
 
     const loadedData = useLoaderData();
+
+    const navigate = useNavigate();
 
     const {
         _id,
@@ -68,9 +70,8 @@ const UpdateItem = () => {
                 }
 
             })
-
-        form.reset();
-
+            
+            navigate(`/my-craft-list/email/${email}`)
     }
 
     return (
