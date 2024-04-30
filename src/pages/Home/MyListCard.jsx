@@ -29,8 +29,8 @@ const MyListCard = (props) => {
                                 text: "Item has been deleted.",
                                 icon: "success",
                             });
-                            const reamining = craftItems.filter(craftItem => craftItem._id !== data._id);
-                            setCraftItems(reamining);
+                            const remaining = craftItems.filter(craftItem => craftItem._id !== data._id);
+                            setCraftItems(remaining);
                         }
                     })
             }
@@ -72,3 +72,7 @@ MyListCard.propTypes = {
 }
 
 export default MyListCard;
+
+
+
+

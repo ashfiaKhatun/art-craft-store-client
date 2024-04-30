@@ -61,15 +61,14 @@ const AddCraftItem = () => {
     return (
         <>
             <Helmet>
-                <title>Add Tourist Spot </title>
+                <title>Add Craft and Art Item </title>
             </Helmet>
 
 
-            <div className="bg-gray-100 mt-6 p-24">
+            <div className="bg-gray-100 mt-6 p-8 lg:p-24">
                 <div className='flex items-center gap-8'>
                     <div>
-                        <h2 className="w-44 lg:w-64 text-center text-xl md:text-3xl font-extrabold text-blue-950">Add Tourist Spot</h2>
-
+                        <h2 className=" text-center text-xl md:text-3xl font-extrabold text-blue-950">Add Craft and Art Item</h2>
 
                     </div>
                     <div className="text-sm md:text-lg text-cyan-800 w-28 md:w-72 h-5">
@@ -81,23 +80,17 @@ const AddCraftItem = () => {
                     loader ? <div className='mt-6 w-full text-center'><span className="loading loading-spinner loading-lg"></span></div> :
 
                         <form className="space-y-4 mt-6" onSubmit={handleAddCraftItem}>
-                            {/* Form Row */}
-                            <div className="md:flex items-center space-y-4 md:space-y-0">
-                                <div className="form-control md:w-1/2">
-                                    <label className="label">
-                                        <span className="label-text text-base">Item Name</span>
-                                    </label>
-                                    <label className="input-group ">
-                                        <input type="text" name="item_name" placeholder="Item Name" className="input input-bordered w-full border-2 border-blue-300" />
-                                    </label>
+
+
+                            <div className="grid lg:grid-cols-2 gap-4">
+                                <div>
+                                    <label className="label-text text-base">Item Name</label>
+                                    <input type="text" name="item_name" placeholder="Item Name" className="input input-bordered w-full mt-2 border-2 border-cyan-800 border-opacity-40" />
                                 </div>
 
-
-                                <div className=" md:w-1/2 md:ml-4">
-                                    <label className="label">
-                                        <span className="label-text text-base">Subcategory Name</span>
-                                    </label>
-                                    <select className="select border-2 border-blue-300 w-full" name='sub_category'>
+                                <div>
+                                    <label className="label-text text-base">Subcategory Name</label>
+                                    <select className="select border-2 border-cyan-800 border-opacity-40 w-full mt-2" name='sub_category'>
                                         <option></option>
                                         <option>Landscape Painting</option>
                                         <option>Portrait Drawing</option>
@@ -107,38 +100,20 @@ const AddCraftItem = () => {
                                         <option>Cartoon Drawing</option>
                                     </select>
                                 </div>
-                            </div>
 
-
-                            {/* Form Row */}
-                            <div className="md:flex space-y-4 md:space-y-0">
-                                <div className="form-control md:w-1/2">
-                                    <label className="label">
-                                        <span className="label-text text-base">Short Description</span>
-                                    </label>
-                                    <label className="input-group">
-                                        <input type="text" name="description" placeholder="Short Description" className="input input-bordered w-full border-2 border-blue-300" />
-                                    </label>
+                                <div>
+                                    <label className="label-text text-base">Short Description</label>
+                                    <input type="text" name="description" placeholder="Short Description" className="input input-bordered w-full border-2 border-cyan-800 border-opacity-40 mt-2" />
                                 </div>
 
-
-                                <div className="form-control md:w-1/2 md:ml-4">
-                                    <label className="label">
-                                        <span className="label-text text-base">Price</span>
-                                    </label>
-                                    <label className="input-group ">
-                                        <input type="text" name="price" placeholder="Price" className="input input-bordered w-full border-2 border-blue-300" />
-                                    </label>
+                                <div>
+                                    <label className="label-text text-base">Price</label>
+                                    <input type="text" name="price" placeholder="Price" className="input input-bordered w-full border-2 border-cyan-800 border-opacity-40 mt-2" />
                                 </div>
-                            </div>
 
-                            {/* Form Row */}
-                            <div className="md:flex space-y-4 md:space-y-0">
-                                <div className="form-control md:w-1/2">
-                                    <label className="label">
-                                        <span className="label-text text-base">Customization</span>
-                                    </label>
-                                    <select className="select border-2 border-blue-300 w-full" name='customization'>
+                                <div>
+                                    <label className="label-text text-base">Customization</label>
+                                    <select className="select border-2 border-cyan-800 border-opacity-40 mt-2 w-full" name='customization'>
                                         <option></option>
                                         <option>Yes</option>
                                         <option>No</option>
@@ -146,24 +121,14 @@ const AddCraftItem = () => {
                                     </select>
                                 </div>
 
-                                <div className="form-control md:w-1/2 md:ml-4">
-                                    <label className="label">
-                                        <span className="label-text text-base">Processing Time</span>
-                                    </label>
-                                    <label className="input-group ">
-                                        <input type="text" name="time" placeholder="Processing Time" className="input input-bordered w-full border-2 border-blue-300" />
-                                    </label>
+                                <div>
+                                    <label className="label-text text-base">Processing Time</label>
+                                    <input type="text" name="time" placeholder="Processing Time" className="input input-bordered w-full border-2 border-cyan-800 border-opacity-40 mt-2" />
                                 </div>
-                            </div>
 
-
-                            {/* Form Row */}
-                            <div className="md:flex space-y-4 md:space-y-0">
-                                <div className="form-control md:w-1/2">
-                                    <label className="label">
-                                        <span className="label-text text-base">Stock Status</span>
-                                    </label>
-                                    <select className="select border-2 border-blue-300 w-full" name='stock_status'>
+                                <div>
+                                    <label className="label-text text-base">Stock Status</label>
+                                    <select className="select border-2 border-cyan-800 border-opacity-40 mt-2 w-full" name='stock_status'>
                                         <option></option>
                                         <option>In Stock</option>
                                         <option>Made to Order</option>
@@ -171,11 +136,9 @@ const AddCraftItem = () => {
                                     </select>
                                 </div>
 
-                                <div className="form-control md:w-1/2 md:ml-4">
-                                    <label className="label">
-                                        <span className="label-text text-base">Rating</span>
-                                    </label>
-                                    <select className="select border-2 border-blue-300 w-full" name='rating'>
+                                <div>
+                                    <label className="label-text text-base">Rating</label>
+                                    <select className="select border-2 border-cyan-800 border-opacity-40 mt-2 w-full" name='rating'>
                                         <option></option>
                                         <option>1</option>
                                         <option>2</option>
@@ -186,44 +149,24 @@ const AddCraftItem = () => {
                                     </select>
                                 </div>
 
-                            </div>
-
-                            {/* Form Row */}
-                            <div className="space-y-4 md:space-y-0" >
-                                <div className="form-control w-full">
-                                    <label className="label">
-                                        <span className="label-text text-base">Photo URL</span>
-                                    </label>
-                                    <label className="input-group ">
-                                        <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full border-2 border-blue-300" />
-                                    </label>
+                                <div className="lg:col-span-2">
+                                    <label className="label-text text-base">Photo URL</label>
+                                    <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full border-2 border-cyan-800 border-opacity-40 mt-2" />
                                 </div>
 
-
-                            </div>
-
-                            {/* Form Row */}
-                            <div className="md:flex space-y-4 md:space-y-0">
-                                <div className="form-control md:w-1/2">
-                                    <label className="label">
-                                        <span className="label-text text-base">User Email</span>
-                                    </label>
-                                    <label className="input-group ">
-                                        <input type="text" name="email" defaultValue={user.email} placeholder="User Email" className="input input-bordered w-full border-2 border-blue-300" />
-                                    </label>
+                                <div>
+                                    <label className="label-text text-base">User Email</label>
+                                    <input type="text" name="email" defaultValue={user.email} placeholder="User Email" className="input input-bordered w-full border-2 border-cyan-800 border-opacity-40 mt-2" />
                                 </div>
 
-                                <div className="form-control md:w-1/2 md:ml-4">
-                                    <label className="label">
-                                        <span className="label-text text-base">User Name</span>
-                                    </label>
-                                    <label className="input-group ">
-                                        <input type="text" name="name" defaultValue={user.displayName} placeholder="User Name" className="input input-bordered w-full border-2 border-blue-300" />
-                                    </label>
+                                <div>
+                                    <label className="label-text text-base">User Name</label>
+                                    <input type="text" name="name" defaultValue={user.displayName} placeholder="User Name" className="input input-bordered w-full border-2 border-cyan-800 border-opacity-40 mt-2" />
                                 </div>
+                                
+                                <input type="submit" value="Add Item" className="btn btn-block bg-cyan-800 hover:bg-transparent hover:text-cyan-800 hover:border-cyan-800 text-white lg:col-span-2" />
                             </div>
 
-                            <input type="submit" value="Add Item" className="btn btn-block bg-primary text-white" />
 
                         </form>
                 }
