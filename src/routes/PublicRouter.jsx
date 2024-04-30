@@ -55,6 +55,11 @@ const router = createBrowserRouter([
                 element: <MyItems></MyItems>,
                 loader: ({params}) => fetch(`https://art-craft-store-server-murex.vercel.app/allItems/email/${params.email}`)
             },
+            {
+                path: '/my-craft-list/email/:email',
+                element: <MyItems></MyItems>,
+                loader: ({params}) => fetch(`https://art-craft-store-server-murex.vercel.app/allItems/email/${params.email}`)
+            },
         ]
     },
 ]);
