@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import proImg from '../../assets/user.png'
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
@@ -9,6 +9,8 @@ import { FaRegMoon } from "react-icons/fa";
 const Navbar = () => {
 
     const { signOutUser, user, loader } = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const [theme, setTheme] = useState(
         localStorage.getItem('theme') ? localStorage.getItem("theme") : "light"
@@ -48,6 +50,8 @@ const Navbar = () => {
     const handleSignOut = () => {
         signOutUser()
             .catch(error => console.log(error))
+            
+        navigate('/signin')
     }
 
     return (
@@ -79,19 +83,16 @@ const Navbar = () => {
                         {/* this hidden checkbox controls the state */}
                         <input type="checkbox" onChange={handleChange} checked={theme === "light" ? false : true} className="theme-controller" value="synthwave" />
 
-
                         {/* sun icon */}
 
                         <CiLight className="swap-off fill-current w-8 h-8" />
 
                         {/* moon icon */}
 
-                        <FaRegMoon  className="swap-on fill-current w-8 h-8" />
+                        <FaRegMoon className="swap-on fill-current w-8 h-8" />
 
                     </label>
                 </div>
-
-
 
                 {
                     user ?

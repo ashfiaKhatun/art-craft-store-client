@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 
-
+ 
 const SignUp = () => {
     const { createUser, updateUser } = useContext(AuthContext)
 
