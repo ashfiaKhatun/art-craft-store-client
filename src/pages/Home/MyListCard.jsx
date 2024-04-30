@@ -17,7 +17,7 @@ const MyListCard = (props) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/allItems/${data._id}`, {
+                fetch(`https://art-craft-store-server-murex.vercel.app/allItems/${data._id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -72,7 +72,3 @@ MyListCard.propTypes = {
 }
 
 export default MyListCard;
-
-
-
-

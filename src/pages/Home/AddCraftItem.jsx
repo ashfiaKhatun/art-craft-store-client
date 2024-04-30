@@ -38,7 +38,7 @@ const AddCraftItem = () => {
             name
         }
 
-        fetch('http://localhost:5000/allItems', {
+        fetch('https://art-craft-store-server-murex.vercel.app/allItems', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

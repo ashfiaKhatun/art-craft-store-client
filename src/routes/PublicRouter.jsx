@@ -38,22 +38,22 @@ const router = createBrowserRouter([
             {
                 path: '/allItems',
                 element: <AllCraftItems></AllCraftItems>,
-                loader: () => fetch('http://localhost:5000/allItems')
+                loader: () => fetch('https://art-craft-store-server-murex.vercel.app/allItems')
             },
             {
                 path: '/item-details/:id',
                 element: <PrivateRouter><Details></Details></PrivateRouter>,
-                loader: ({params}) => fetch(`http://localhost:5000/allItems/${params.id}`)
+                loader: ({params}) => fetch(`https://art-craft-store-server-murex.vercel.app/allItems/${params.id}`)
             },
             {
                 path: '/update-item/:id',
                 element: <UpdateItem></UpdateItem>,
-                loader: ({params}) => fetch(`http://localhost:5000/allItems/${params.id}`)
+                loader: ({params}) => fetch(`https://art-craft-store-server-murex.vercel.app/allItems/${params.id}`)
             },
             {
                 path: '/my-craft-list/email/:email',
                 element: <MyItems></MyItems>,
-                loader: ({params}) => fetch(`http://localhost:5000/allItems/email/${params.email}`)
+                loader: ({params}) => fetch(`https://art-craft-store-server-murex.vercel.app/allItems/email/${params.email}`)
             },
         ]
     },

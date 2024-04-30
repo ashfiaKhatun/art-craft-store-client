@@ -51,7 +51,7 @@ const UpdateItem = () => {
             name
         }
 
-        fetch(`http://localhost:5000/allItems/${_id}`, {
+        fetch(`https://art-craft-store-server-murex.vercel.app/allItems/${_id}`, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"
