@@ -12,6 +12,7 @@ import PrivateRouter from "./PrivateRouter";
 import Details from "../pages/Home/Details";
 import MyItems from "../pages/Home/MyItems";
 import UpdateItem from "../pages/Home/UpdateItem";
+import SubCategoryItems from "../pages/Home/SubCategoryItems";
 
 const router = createBrowserRouter([
     {
@@ -56,9 +57,9 @@ const router = createBrowserRouter([
                 loader: ({params}) => fetch(`https://art-craft-store-server-murex.vercel.app/allItems/email/${params.email}`)
             },
             {
-                path: '/my-craft-list/email/:email',
-                element: <MyItems></MyItems>,
-                loader: ({params}) => fetch(`https://art-craft-store-server-murex.vercel.app/allItems/email/${params.email}`)
+                path: '/all-sub-categories/title/:title',
+                element: <SubCategoryItems></SubCategoryItems>,
+                loader: ({params}) => fetch(`https://art-craft-store-server-murex.vercel.app/all-sub-categories/title/${params.title}`)
             },
         ]
     },
