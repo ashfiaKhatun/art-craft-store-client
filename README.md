@@ -1,8 +1,16 @@
-# React + Vite
+# Crafty Corner
+## Live link: https://art-craft-store-801c5.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Users can see Art and Craft Items
+- Users can Register and login to the site
+- Users can add Art and Craft Item with detailed information
+- Users can view items of their list
+- Users can Update or delete items from their list
 
-Currently, two official plugins are available:
+Selected Category
+- B9 A10 Type-02 Requirements
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Package Used
+- React-simple-typewriter
+- React-awesome-reveal
+- React-tooltip
